@@ -16,6 +16,10 @@ class Settings(BaseSettings):
     # AvalAI
     AVALAI_BASE_URL: str = "https://api.avalapis.ir/v1"
     PROVIDER: str = "avalai"
+    # OLLAMA
+    PROVIDER = "ollama"
+    OLLAMA_API_URL = "http://localhost:11434"
+    OLLAMA_MODEL = "mistral"
 
     class Config:
         env_file = ".env"
