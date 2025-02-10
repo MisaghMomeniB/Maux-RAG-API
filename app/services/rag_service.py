@@ -1,6 +1,7 @@
 from app.services.chroma_service import ChromaService
 from app.services.openai_service import openai_service
 from app.services.avalai_service import AvalaiService
+from app.services.ollama_service import OllamaService
 import uuid
 from typing import AsyncGenerator
 import json
@@ -14,6 +15,8 @@ class RAGService:
             self.provider_service = openai_service
         elif settings.PROVIDER == "avalai":
             self.provider_service = AvalaiService()
+        elif settings.PROVIDER == "ollama":
+            self.provider_service = OllamaService()
         else:
             raise ValueError("Invalid provider selected")
 
